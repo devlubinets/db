@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    db:
+        container_name: edu-db-container
+        image: mysql:latest
+        restart: always
+        volumes:
+            - db-data:/var/lib/mysql
+            - .env:/.env
+        environment:
+            MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+        networks:
+            - edu-db-net
+
+volumes:
+    db-data:
+
+networks:
+    edu-db-net:
