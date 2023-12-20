@@ -1,0 +1,1 @@
+Docker entrypoint https://onexlab-io.medium.com/docker-compose-mysql-entry-point-fa6335346791

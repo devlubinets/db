@@ -6,6 +6,7 @@ services:
         image: mysql:latest
         restart: always
         volumes:
+            - ./docker/db/mysql/first_level/dump:/docker-entrypoint-initdb.d
             - db-data:/var/lib/mysql
             - .env:/.env
         environment:
